@@ -9,6 +9,7 @@
   <version>1.0-SNAPSHOT</version>
   <name>Maven Quick Start Archetype</name>
   <url>http://maven.apache.org</url>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -17,22 +18,25 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
   <build>
-  <plugins>
-        <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-            <archive>
-                <manifest>
-                    <addClasspath>true</addClasspath>
-                    <mainClass>org.eric.helloworld.HelloWorld</mainClass>
-                </manifest>
-            </archive>
-            <descriptorRefs>
-                <descriptorRef>jar-with-dependencies</descriptorRef>
-            </descriptorRefs>
-        </configuration>
-    </plugin>
-  </plugins>
+    <plugins>
+	  <plugin>
+	  <artifactId>maven-jar-plugin</artifactId>
+	  <configuration>
+	      <useDefaultManifestFile>true</useDefaultManifestFile>
+	      <archive>
+		  <manifest>
+		      <addClasspath>true</addClasspath>
+		      <mainClass>org.eric.helloworld.HelloWorld</mainClass>
+		  </manifest>
+	      </archive>
+	      <descriptorRefs>
+		  <descriptorRef>jar-with-dependencies</descriptorRef>
+	      </descriptorRefs>
+	 </configuration>
+      </plugin>
+    </plugins>
 </build>
+
 </project>
